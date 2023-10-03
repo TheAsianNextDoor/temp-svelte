@@ -1,6 +1,8 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { createSupabaseLoadClient } from '@supabase/auth-helpers-sveltekit';
 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 export const load = async ({ fetch, data, depends }) => {
   depends('supabase:auth');
 
