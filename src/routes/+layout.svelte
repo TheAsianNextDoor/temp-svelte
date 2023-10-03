@@ -2,10 +2,17 @@
   import { onMount } from 'svelte';
   import { invalidate } from '$app/navigation';
 
+  import { initializeStores } from '@skeletonlabs/skeleton';
+  import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+  import { storePopup } from '@skeletonlabs/skeleton';
+
   import './styles.css';
-  // import '../app.postcss';
+  import '../app.postcss';
 
   export let data;
+
+  initializeStores();
+  storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
   let { supabase, session } = data;
   $: ({ supabase, session } = data);
